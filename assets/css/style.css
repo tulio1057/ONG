@@ -2069,6 +2069,10 @@ body {
     }
     
     /* Como ajudar responsivo */
+    
+.help .section-header p {
+    color: #d67f0d;
+}
     .help {
         padding: 60px 0;
     }
