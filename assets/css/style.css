@@ -928,6 +928,10 @@ body {
 }
 
 /* Ajuda */
+.help .section-header p {
+    color: #d67f0d;
+}
+
 .help {
     padding: 80px 0;
     background: var(--rosa);
