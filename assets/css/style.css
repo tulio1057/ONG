@@ -463,9 +463,9 @@ body {
 }
 
 .years-card {
-    position: absolute;
-    top: -24px;
-    right: -24px;
+    position: center;
+    top: -25px;
+    right: -25px;
     background: var(--branco);
     padding: 20px;
     border-radius: 20px;
