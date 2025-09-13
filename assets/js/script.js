@@ -307,8 +307,9 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            if (this.classList.contains('instagram')) {
-                alert('Siga-nos no Instagram: @ongcoracaoquentinhorecife\n\nEm breve, você será redirecionado para nossa página oficial.');
+             if (this.classList.contains('instagram')) {
+            // CORREÇÃO: Redirecionar diretamente para o Instagram sem alerta
+            window.open('https://www.instagram.com/ongcoracaoquentinhorecife/', '_blank');
             } else if (this.classList.contains('facebook')) {
                 alert('Curta nossa página no Facebook: ONG Coração Quentinho\n\nEm breve, você será redirecionado para nossa página oficial.');
             } else if (this.classList.contains('whatsapp')) {
