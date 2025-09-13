@@ -1162,6 +1162,7 @@ body {
 }
 
 .help-cta p {
+    color: #d67f0d;
     margin-bottom: 24px;
     line-height: 1.7;
 }
