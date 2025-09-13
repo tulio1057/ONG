@@ -300,25 +300,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    //  LINKS SOCIAIS 
-    const socialLinks = document.querySelectorAll('.social-link');
-    
-    socialLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-             if (this.classList.contains('instagram')) {
+// LINKS SOCIAIS 
+const socialLinks = document.querySelectorAll('.social-link');
+
+socialLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (this.classList.contains('instagram')) {
             // CORREÇÃO: Redirecionar diretamente para o Instagram sem alerta
             window.open('https://www.instagram.com/ongcoracaoquentinhorecife/', '_blank');
-            } else if (this.classList.contains('facebook')) {
-                alert('Curta nossa página no Facebook: ONG Coração Quentinho\n\nEm breve, você será redirecionado para nossa página oficial.');
-            } else if (this.classList.contains('whatsapp')) {
-                const whatsappNumber = '55819987331912';
-                const message = encodeURIComponent('Olá! Vim através do site da ONG Coração Quentinho.');
-                window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-            }
-        });
+        } else if (this.classList.contains('facebook')) {
+            // Manter alerta para Facebook se necessário
+            alert('Curta nossa página no Facebook: ONG Coração Quentinho\n\nEm breve, você será redirecionado para nossa página oficial.');
+        } else if (this.classList.contains('whatsapp')) {
+            const whatsappNumber = '5581987331912';
+            const message = encodeURIComponent('Olá! Vim através do site da ONG Coração Quentinho.');
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        }
     });
+});
     
     //  EFEITOS DE HOVER MELHORES
     const cards = document.querySelectorAll('.stat-card, .value-card, .project-card, .help-card, .donation-card');
