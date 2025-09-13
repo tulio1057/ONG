@@ -1148,6 +1148,12 @@ body {
     margin-top: 12px;
 }
 
+.help-cta p {
+    color: #d67f0d;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
 .help-cta {
     text-align: center;
     max-width: 600px;
