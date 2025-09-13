@@ -743,7 +743,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Stories Section */
+/* Historias */
 .stories {
     padding: 80px 0;
     background: var(--branco);
@@ -928,7 +928,7 @@ body {
 }
 
 /* Ajuda */
-.help .section-header p {
+.info-card p {
     color: #d67f0d;
 }
 
