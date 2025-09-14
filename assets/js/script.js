@@ -1,7 +1,7 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
     
-    //  NAVEGAÇÃO MOBILE 
+    // NAVEGAÇÃO MOBILE 
     const menuToggle = document.getElementById('menuToggle');
     const navMobile = document.getElementById('navMobile');
     
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    //  NAVEGAÇÃO BONITA 
+    // NAVEGAÇÃO SUAVE 
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
     navLinks.forEach(link => {
@@ -68,35 +68,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const stories = [
         {
             avatar: '👩‍💼',
-            name: 'Maria',
+            name: 'Maria Silva',
             age: '42 anos • Recife - PE',
             rating: '⭐⭐⭐⭐⭐',
-            quote: 'Teste 1',
-            impact: 'Ajuda da ong'
+            quote: 'Quando perdi meu emprego durante a pandemia, não sabia como alimentar meus três filhos. A ONG Coração Quentinho não apenas me ajudou com cestas básicas, mas também me ofereceu um curso de costura. Hoje tenho minha própria renda e posso sustentar minha família com dignidade.',
+            impact: 'Recebeu apoio alimentar por 8 meses e se formou no curso de capacitação profissional'
         },
         {
             avatar: '👨‍🔧',
-            name: 'João',
+            name: 'João Santos',
             age: '35 anos • Recife - PE',
             rating: '⭐⭐⭐⭐⭐',
-            quote: 'Teste 2',
-            impact: 'Ajuda da ong'
+            quote: 'Estava desempregado há meses e com dois filhos pequenos. A ONG me ajudou com alimentos e me indicou para um curso de capacitação. Hoje trabalho como eletricista e consegui reconstruir minha vida.',
+            impact: 'Participou do programa de capacitação profissional e conseguiu emprego formal'
         },
         {
             avatar: '👵',
             name: 'Dona Ana',
             age: '68 anos • Recife - PE',
             rating: '⭐⭐⭐⭐⭐',
-            quote: 'Teste 3',
-            impact: 'Ajuda da ong'
+            quote: 'Moro sozinha e minha aposentadoria mal dá para os remédios. A ONG me trouxe uma cadeira de rodas quando precisei e sempre me ajuda com alimentos. São anjos na minha vida.',
+            impact: 'Recebeu equipamento de mobilidade e apoio alimentar contínuo'
         },
         {
             avatar: '👩‍🎓',
-            name: 'Bia',
+            name: 'Beatriz Lima',
             age: '28 anos • Recife - PE',
             rating: '⭐⭐⭐⭐⭐',
-            quote: 'Teste 4',
-            impact: 'Ajuda da ong'
+            quote: 'Participei das aulas de artesanato com minha filha. Além de aprendermos juntas, consegui uma renda extra vendendo os produtos que faço. A ONG mudou nossa perspectiva de vida.',
+            impact: 'Desenvolveu habilidades em artesanato e gerou renda complementar'
         }
     ];
     
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentStory = index;
     }
     
-    // Navegação dos comentarios
+    // Navegação das histórias
     if (prevBtn) {
         prevBtn.addEventListener('click', function() {
             currentStory = currentStory > 0 ? currentStory - 1 : stories.length - 1;
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Se mexe sozinho (opcional)
+    // Rotação automática das histórias
     setInterval(function() {
         if (nextBtn) {
             currentStory = currentStory < stories.length - 1 ? currentStory + 1 : 0;
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 8000); // Muda a cada 8 segundos
     
-    //  FORMULÁRIO DE CONTATO 
+    // FORMULÁRIO DE CONTATO 
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
@@ -183,13 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: formData.get('message')
             };
             
-            // Se todos os campos estão preenchidos
+            // Verifica se todos os campos obrigatórios estão preenchidos
             if (!data.name || !data.email || !data.subject || !data.message) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
             
-            // Ver se é um email mesmo
+            // Validação de email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 alert('Por favor, insira um email válido.');
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<span>📤</span> Enviando...';
             submitBtn.disabled = true;
             
-            // Mensagem de envio
+            // Simula tempo de envio
             setTimeout(function() {
                 alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
                 contactForm.reset();
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    //  NOVIDADES POR EMAIL
+    // NEWSLETTER
     const newsletterForm = document.querySelector('.newsletter-form');
     
     if (newsletterForm) {
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    //  ANIMAÇÕES DE SCROLL 
+    // ANIMAÇÕES DE SCROLL 
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -264,14 +264,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Adiciona animação aos elementos
-    const animatedElements = document.querySelectorAll('.stat-card, .value-card, .project-card, .help-card, .donation-card, .impact-stat');
+    const animatedElements = document.querySelectorAll('.stat-card, .value-card, .project-card, .help-card, .impact-stat');
     
     animatedElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
     
-    //  BOTÕES DE AÇÃO 
+    // BOTÕES DE AÇÃO 
     const actionButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
     
     actionButtons.forEach(button => {
@@ -281,48 +281,46 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ações específicas baseadas no texto do botão
             if (buttonText.includes('Doar') || buttonText.includes('Doação')) {
                 e.preventDefault();
-                alert('Redirecionando para a página de doação...\n\nPIX: (81) 9 98733-1912\nBanco Caixa');
+                alert('Redirecionando para a página de doação...\n\nPIX: (81) 98733-1912\nBanco: Banco do Brasil');
             } else if (buttonText.includes('Voluntário')) {
                 e.preventDefault();
-                alert('Obrigado pelo interesse em ser voluntário!\n\nEntre em contato conosco:\n📞 (81) 9 98733-1912\n📧 coracaoquentinhorecife@gmail.com');
+                alert('Obrigado pelo interesse em ser voluntário!\n\nEntre em contato conosco:\n📞 (81) 98733-1912\n📧 coracaoquentinhorecife@gmail.com');
             } else if (buttonText.includes('WhatsApp')) {
                 e.preventDefault();
-                const whatsappNumber = '55819987331912';
+                const whatsappNumber = '5581987331912';
                 const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a ONG Coração Quentinho.');
                 window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             } else if (buttonText.includes('Parceria')) {
                 e.preventDefault();
-                alert('Interessado em fazer parceria?\n\nEntre em contato conosco:\n📧 coracaoquentinhorecife@gmail.com\n📞 (81) 9 9999-9999');
-            } else if (buttonText.includes('Solicitar Ajuda')) {
+                alert('Interessado em fazer parceria?\n\nEntre em contato conosco:\n📧 coracaoquentinhorecife@gmail.com\n📞 (81) 98733-1912');
+            } else if (buttonText.includes('Solicitar Ajuda') || buttonText.includes('Contato Urgente')) {
                 e.preventDefault();
-                alert('Precisa de ajuda?\n\nEntre em contato conosco:\n📞 (81) 9 98733-1912 (WhatsApp 24h)\n📧 coracaoquentinhorecife@gmail.com');
+                alert('Precisa de ajuda?\n\nEntre em contato conosco:\n📞 (81) 98733-1912 (WhatsApp 24h)\n📧 coracaoquentinhorecife@gmail.com');
             }
         });
     });
     
-// LINKS SOCIAIS 
-const socialLinks = document.querySelectorAll('.social-link');
+    // LINKS SOCIAIS 
+    const socialLinks = document.querySelectorAll('.social-link');
 
-socialLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        if (this.classList.contains('instagram')) {
-            // CORREÇÃO: Redirecionar diretamente para o Instagram sem alerta
-            window.open('https://www.instagram.com/ongcoracaoquentinhorecife/', '_blank');
-        } else if (this.classList.contains('facebook')) {
-            // Manter alerta para Facebook se necessário
-            alert('Curta nossa página no Facebook: ONG Coração Quentinho\n\nEm breve, você será redirecionado para nossa página oficial.');
-        } else if (this.classList.contains('whatsapp')) {
-            const whatsappNumber = '5581987331912';
-            const message = encodeURIComponent('Olá! Vim através do site da ONG Coração Quentinho.');
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-        }
+    socialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (this.classList.contains('instagram')) {
+                window.open('https://www.instagram.com/ongcoracaoquentinhorecife/', '_blank');
+            } else if (this.classList.contains('facebook')) {
+                alert('Curta nossa página no Facebook: ONG Coração Quentinho\n\nEm breve, você será redirecionado para nossa página oficial.');
+            } else if (this.classList.contains('whatsapp')) {
+                const whatsappNumber = '5581987331912';
+                const message = encodeURIComponent('Olá! Vim através do site da ONG Coração Quentinho.');
+                window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            }
+        });
     });
-});
     
-    //  EFEITOS DE HOVER MELHORES
-    const cards = document.querySelectorAll('.stat-card, .value-card, .project-card, .help-card, .donation-card');
+    // EFEITOS DE HOVER APRIMORADOS
+    const cards = document.querySelectorAll('.stat-card, .value-card, .project-card, .help-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -334,7 +332,7 @@ socialLinks.forEach(link => {
         });
     });
     
-    //  CONTADOR ANIMADO PARA ESTATÍSTICAS 
+    // CONTADOR ANIMADO PARA ESTATÍSTICAS 
     function animateCounter(element, target, duration = 2000) {
         let start = 0;
         const increment = target / (duration / 16);
@@ -371,7 +369,7 @@ socialLinks.forEach(link => {
         statObserver.observe(stat);
     });
     
-    //  VOLTAR AO COMEÇO 
+    // BOTÃO VOLTAR AO TOPO 
     let scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.innerHTML = '↑';
     scrollToTopBtn.className = 'scroll-to-top';
@@ -379,7 +377,7 @@ socialLinks.forEach(link => {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: var(--primary-red);
+        background: var(--vermelho);
         color: white;
         border: none;
         border-radius: 50%;
@@ -415,7 +413,7 @@ socialLinks.forEach(link => {
         });
     });
     
-    //  CAREGAMENTO DEVAGAR IMAGENS
+    // CARREGAMENTO LAZY DE IMAGENS
     const images = document.querySelectorAll('img');
     const imageObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
@@ -436,10 +434,9 @@ socialLinks.forEach(link => {
         }
     });
     
-    //  RESPOSTA VISUAL PARA INTERAÇÕES 
+    // EFEITO RIPPLE PARA BOTÕES 
     document.addEventListener('click', function(e) {
         if (e.target.matches('button, .btn-primary, .btn-secondary')) {
-            // Cria efeito massa
             const button = e.target;
             const ripple = document.createElement('span');
             const rect = button.getBoundingClientRect();
@@ -460,6 +457,21 @@ socialLinks.forEach(link => {
                 pointer-events: none;
             `;
             
+            // Adiciona animação CSS se não existir
+            if (!document.querySelector('#ripple-animation')) {
+                const style = document.createElement('style');
+                style.id = 'ripple-animation';
+                style.textContent = `
+                    @keyframes ripple {
+                        to {
+                            transform: scale(4);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
             button.style.position = 'relative';
             button.style.overflow = 'hidden';
             button.appendChild(ripple);
@@ -470,19 +482,21 @@ socialLinks.forEach(link => {
         }
     });
     
-    // Adiciona CSS para animação massa
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
+    // SMOOTH SCROLL PARA NAVEGAÇÃO
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-        }
-    `;
-    document.head.appendChild(style);
+        });
+    });
     
-    console.log('🎉 Site da ONG Coração Quentinho carregado com sucesso!');
-    console.log('💝 Transformando vidas através da solidariedade');
+    // INICIALIZAÇÃO FINAL
+    console.log('ONG Coração Quentinho - Site carregado com sucesso!');
 });
 
